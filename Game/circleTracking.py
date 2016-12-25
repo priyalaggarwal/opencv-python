@@ -2,6 +2,8 @@ import cv2
 import imutils
 
 camera = cv2.VideoCapture(0)
+
+# blue color range
 lowerColor = (110,50,50)
 upperColor = (130,255,255)
 
@@ -33,6 +35,8 @@ while True:
 		c = max(cnts, key=cv2.contourArea)
 		((x, y), radius) = cv2.minEnclosingCircle(c)
 		M = cv2.moments(c)
+		if M["m00"]==0:
+			continue 
 		center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
 		if radius > 10:
 			cv2.circle(frame, (int(x), int(y)), int(radius),
