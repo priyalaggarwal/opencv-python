@@ -2,7 +2,7 @@
 
 Opencv 3.1.0 Python 2.7
 
-1. Face Detection API
+1. Face Detection API<br>
    Used Django to make an API for Face Detection from webcam
    
 2. Car Racing Game
